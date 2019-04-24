@@ -26,6 +26,9 @@ function Buttons(){
           display: flex;
           align-self: flex-end;
         }
+        button:hover{
+          cursor: pointer;
+        }
       `}</style>
     </div>
   );
