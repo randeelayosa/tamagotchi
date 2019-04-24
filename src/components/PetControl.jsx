@@ -14,8 +14,15 @@ function PetControl(){
       <Pet/>
       <img src={player}/>
       <style jsx>{`
+        div{
+          border: 3px solid yellow;
+          border-radius: 20px;
+          margin-top: 50px;
+          width: 575px;
+          height: 500px;
+        }
         img {
-          width: 25%;
+          width: 20%;
           height: auto;
         }
       `}</style>
