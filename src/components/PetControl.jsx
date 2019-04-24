@@ -17,6 +17,7 @@ function PetControl(){
         div{
           border-radius: 20px;
           background-color: rgb(156, 164, 160);
+          box-shadow: inset 0px 0px 15px 12px rgb(111, 114, 113);
           width: 90%;
           height: 85%;
         }

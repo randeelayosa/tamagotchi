@@ -7,6 +7,14 @@ function Pet(props){
       <p>Energy Level: {props.energy}</p>
       <p>Hunger Level: {props.hunger}</p>
       <p>Fatigue Level: {props.fatigue}</p>
+      <style jsx>{`
+        div{
+          margin: 5%;
+          display: flex;
+          flex-flow: row no-wrap;
+          justify-content: space-around;
+        }
+      `}</style>
     </div>
   );
 };

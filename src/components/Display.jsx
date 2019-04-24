@@ -44,7 +44,7 @@ function Display(){
           clip-path: polygon(4% 0, 18% 4%, 44% 0, 71% 5%, 100% 1%, 97% 29%, 100% 46%, 96% 69%, 100% 100%, 68% 97%, 41% 100%, 19% 95%, 0 100%, 2% 68%, 0 37%);
         }
         .displayFrame{
-          background-color: yellow;
+          background-color: rgb(251,227,58);
           width: 610px;
           height: 570px;
           display: flex;
