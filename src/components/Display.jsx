@@ -9,7 +9,11 @@ function Display(){
       <div className='logo'>
         <img src={logo}/>
       </div>
-      <PetControl/>
+      <div className='displayBorder'>
+        <div className='displayFrame'>
+          <PetControl/>
+        </div>
+      </div>
       <style jsx>{`
         .egg {
           display: flex;
@@ -24,11 +28,29 @@ function Display(){
         .logo{
           filter: invert(100%);
           width: 50%;
-          border: 1px solid white;
-          margin-top: 70px;
+          margin-top: 80px;
         }
         img{
           width: 100%;
+        }
+        .displayBorder{
+          background-color: rgba(102,27,82,.6);
+          width: 620px;
+          height: 580px;
+          margin-top: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          clip-path: polygon(4% 0, 18% 4%, 44% 0, 71% 5%, 100% 1%, 97% 29%, 100% 46%, 96% 69%, 100% 100%, 68% 97%, 41% 100%, 19% 95%, 0 100%, 2% 68%, 0 37%);
+        }
+        .displayFrame{
+          background-color: yellow;
+          width: 610px;
+          height: 570px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          clip-path: polygon(4% 0, 18% 4%, 44% 0, 71% 5%, 100% 1%, 97% 29%, 100% 46%, 96% 69%, 100% 100%, 68% 97%, 41% 100%, 19% 95%, 0 100%, 2% 68%, 0 37%);
         }
       `}</style>
     </div>
