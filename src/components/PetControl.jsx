@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import player from '../assets/images/chicken.png';
 import Pet from './Pet';
 
@@ -11,7 +10,10 @@ function PetControl(){
   };
   return(
     <div>
-      <Pet/>
+      <Pet
+        energy={chicken.energy}
+        hunger={chicken.hunger}
+        fatigue={chicken.fatigue}/>
       <img src={player}/>
       <style jsx>{`
         div{

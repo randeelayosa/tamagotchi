@@ -1,6 +1,7 @@
 import React from 'react';
 import Pet from './Pet';
 import PetControl from './PetControl';
+import Buttons from './Buttons';
 import logo from '../assets/images/logo2.png';
 
 function Display(){
@@ -14,6 +15,7 @@ function Display(){
           <PetControl/>
         </div>
       </div>
+      <Buttons/>
       <style jsx>{`
         .egg {
           display: flex;
