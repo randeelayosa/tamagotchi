@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import player from '../assets/images/chicken.png';
 import Pet from './Pet';
 import Icons from './Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function PetControl(props){
-
   return(
     <div className='mainDisplay'>
       <div className='healthMeter'>
@@ -83,9 +83,9 @@ function PetControl(props){
               font-size: 1em;
             }
           }
-        `}</style>
-    </div>
-  );
-}
+          `}</style>
+      </div>
+    );
+  }
 
-export default PetControl;
+  export default PetControl;

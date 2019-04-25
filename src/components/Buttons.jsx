@@ -1,55 +1,53 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Buttons(){
-
-
-
+function Buttons(props){
+  console.log(props.onIncreaseActivity);
   return(
     <div>
-      <button></button>
-      <button className='secondButton'></button>
-      <button></button>
+      <button onClick={props.onIncreaseActivity}></button>
+      <button onClick={props.onIncreaseHunger} className='secondButton'></button>
+      <button onClick={props.onIncreaseHappiness}></button>
       <style jsx>{`
-        div{
-          display: flex;
-          justify-content: space-around;
-          width: 60%;
-          height: 15%;
-          margin-top: 1%;
-        }
-        button{
-          width: 20%;
-          height: 60%;
-          background-color: blue;
-          border: none;
-          border-radius: 50%;
-          box-shadow: 8px 8px 50px black, inset 5px 2px 5px rgb(104, 91, 255);
-        }
-        .secondButton{
-          display: flex;
-          align-self: flex-end;
-        }
-        button:hover{
-          cursor: pointer;
-        }
-        @media only screen and (max-width: 768px){
           div{
-            width: 250px;
-            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            height: 15%;
+            margin-top: 1%;
           }
-        }
-        @media only screen and (max-width: 425px){
-          div{
-            width: 150px;
-            height: 45px;
-            margin-top: 3%;
+          button{
+            width: 20%;
+            height: 60%;
+            background-color: blue;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 8px 8px 50px black, inset 5px 2px 5px rgb(104, 91, 255);
           }
-        }
-      `}</style>
-    </div>
-  );
-}
+          .secondButton{
+            display: flex;
+            align-self: flex-end;
+          }
+          button:hover{
+            cursor: pointer;
+          }
+          @media only screen and (max-width: 768px){
+            div{
+              width: 250px;
+              height: 80px;
+            }
+          }
+          @media only screen and (max-width: 425px){
+            div{
+              width: 150px;
+              height: 45px;
+              margin-top: 3%;
+            }
+          }
+          `}</style>
+      </div>
+    );
+  }
 
 
-
-export default Buttons;
+  export default Buttons;

@@ -1,5 +1,9 @@
 import React from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall);
 
 function Icons(){
   return(
@@ -32,7 +36,7 @@ function Icons(){
         }
       `}</style>
     </div>
-  )
+  );
 }
 
 export default Icons;

@@ -1,11 +1,5 @@
 import React from 'react';
 import Display from './Display';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall } from '@fortawesome/free-solid-svg-icons';
-
-library.add(faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall);
 
 class App extends React.Component {
   constructor(props) {
@@ -17,12 +11,15 @@ class App extends React.Component {
         happiness: 100,
         health: 300
       }
-    }
+    };
+    this.handleIncreaseActivity = this.handleIncreaseActivity.bind(this);
+    this.handleIncreaseHunger = this.handleIncreaseHunger.bind(this);
+    this.handleIncreaseHappiness = this.handleIncreaseHappiness.bind(this);
   }
 
   componentDidMount() {
     this.updateChickenProperties = setInterval(() =>
-    this.decreasingChickenProperties(),
+      this.decreasingChickenProperties(),
     3000
     );
   }
@@ -33,13 +30,34 @@ class App extends React.Component {
     newChicken.hunger -= 1;
     newChicken.happiness -= 1;
     newChicken.health = newChicken.activity + newChicken.hunger + newChicken.happiness;
-    this.setState({chicken: newChicken})
+    this.setState({chicken: newChicken});
+  }
+
+  handleIncreaseActivity() {
+    const newChicken = Object.assign({}, this.state.chicken);
+    newChicken.activity += 5;
+    newChicken.health += 5;
+    this.setState({chicken: newChicken});
+  }
+
+  handleIncreaseHunger() {
+    const newChicken = Object.assign({}, this.state.chicken);
+    newChicken.hunger += 5;
+    newChicken.health += 5;
+    this.setState({chicken: newChicken});
+  }
+
+  handleIncreaseHappiness() {
+    const newChicken = Object.assign({}, this.state.chicken);
+    newChicken.happiness += 5;
+    newChicken.health += 5;
+    this.setState({chicken: newChicken});
   }
 
   render(){
     return(
       <div>
-        <Display chicken={this.state.chicken}/>
+        <Display chicken={this.state.chicken} onIncreaseActivity={this.handleIncreaseActivity} onIncreaseHunger={this.handleIncreaseHunger} onIncreaseHappiness={this.handleIncreaseHappiness}/>
         <style jsx>{`
           div {
             display: flex;

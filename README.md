@@ -69,7 +69,7 @@ _This application uses React to create a web replica of the popular 90's Japanes
 - [ ] Feeding function
 - [ ] Playing function
 - [ ] Resting function
-- [ ] Set time interval
+- [x] Set time interval
 - [ ] Health inventory
 - [ ] Button functionality
 - [x] Tamagotchi Egg styling
