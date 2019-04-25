@@ -17,10 +17,17 @@ function Icons(){
         p{
           font-size: 3.5em;
           text-align: center;
+          color: rgb(0,0,0);
+          opacity: 1;
         }
         @media only screen and (max-width: 768px){
           p{
             font-size: 2em;
+          }
+        }
+        @media only screen and (max-width: 425px){
+          p{
+            font-size: .9em;
           }
         }
       `}</style>

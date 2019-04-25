@@ -41,7 +41,7 @@ function PetControl(props){
             height: 80%;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             flex-flow: row nowrap;
           }
           .petPoo{
@@ -60,16 +60,28 @@ function PetControl(props){
             justify-content: center;
             align-items: flex-end;
           }
-          .petPlay{
-            height: 80%;
-            width: 20%;
-          }
           img {
             width: auto;
-            height: 80%;
+            height: 85%;
           }
           .healthIcons{
             height: 18%;
+          }
+          @media only screen and (max-width: 768px){
+            .petPoo{
+              font-size: .8em;
+            }
+            .petPlay{
+              font-size: .8em;
+            }
+          }
+          @media only screen and (max-width: 425px){
+            .petPoo{
+              font-size: 1em;
+            }
+            .petPlay{
+              font-size: 1em;
+            }
           }
         `}</style>
     </div>

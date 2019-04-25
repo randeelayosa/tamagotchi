@@ -23,7 +23,7 @@ class App extends React.Component {
   componentDidMount() {
     this.updateChickenProperties = setInterval(() =>
     this.decreasingChickenProperties(),
-    2000
+    3000
     );
   }
 

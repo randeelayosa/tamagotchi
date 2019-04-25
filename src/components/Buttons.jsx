@@ -1,6 +1,9 @@
 import React from 'react';
 
 function Buttons(){
+
+
+
   return(
     <div>
       <button></button>
@@ -33,6 +36,13 @@ function Buttons(){
           div{
             width: 250px;
             height: 80px;
+          }
+        }
+        @media only screen and (max-width: 425px){
+          div{
+            width: 150px;
+            height: 45px;
+            margin-top: 3%;
           }
         }
       `}</style>

@@ -58,6 +58,9 @@ function Display(props){
             width: 500px;
             height: 625px;
           }
+          .logo{
+            margin-top: 12%;
+          }
         }
         @media only screen and (max-width: 425px){
           .egg{
