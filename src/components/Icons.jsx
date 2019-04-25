@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Icons(){
   return(
     <div>
-      <p className='poop'><FontAwesomeIcon icon="poo"/></p>
+      <p className='toilet'><FontAwesomeIcon icon="toilet-paper"/></p>
       <p className='eat'><FontAwesomeIcon icon="utensils"/></p>
       <p className='quidditch'><FontAwesomeIcon icon="quidditch"/></p>
       <style jsx>{`
@@ -16,7 +16,6 @@ function Icons(){
         }
         p{
           font-size: 3.5em;
-          color: black;
           text-align: center;
         }
         @media only screen and (max-width: 768px){
