@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Pet(props){
-
-
-
   return(
     <div>
       <p>Activity Level: <span>{props.activity}</span></p>

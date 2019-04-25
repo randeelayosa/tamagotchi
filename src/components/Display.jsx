@@ -2,8 +2,9 @@ import React from 'react';
 import PetControl from './PetControl';
 import Buttons from './Buttons';
 import logo from '../assets/images/logo2.png';
+import PropTypes from 'prop-types';
 
-function Display(){
+function Display(props){
   return(
     <div className='egg'>
       <div className='logo'>
@@ -11,7 +12,7 @@ function Display(){
       </div>
       <div className='displayBorder'>
         <div className='displayFrame'>
-          <PetControl/>
+          <PetControl chicken={props.chicken}/>
         </div>
       </div>
       <Buttons/>

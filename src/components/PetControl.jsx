@@ -4,21 +4,16 @@ import Pet from './Pet';
 import Icons from './Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function PetControl(){
-  const chicken = {
-    activity: '100',
-    hunger: '100',
-    happiness: '100',
-    health: '300'
-  };
+function PetControl(props){
+
   return(
     <div className='mainDisplay'>
       <div className='healthMeter'>
         <Pet
-          activity={chicken.activity}
-          hunger={chicken.hunger}
-          happiness={chicken.happiness}
-          health={chicken.health}/>
+          activity={props.chicken.activity}
+          hunger={props.chicken.hunger}
+          happiness={props.chicken.happiness}
+          health={props.chicken.health}/>
       </div>
       <div className='petIcon'>
         <div className='petPoo'>
@@ -33,7 +28,6 @@ function PetControl(){
         <Icons/>
       </div>
       <style jsx>{`
-          border: 1px solid blue;
           .mainDisplay{
             border-radius: 20px;
             background-color: rgb(156, 164, 160);
@@ -51,7 +45,6 @@ function PetControl(){
             flex-flow: row nowrap;
           }
           .petPoo{
-            border: 1px solid black;
             height: 80%;
             width: 20%;
             font-size: 3.5em;
@@ -60,7 +53,6 @@ function PetControl(){
             align-items: flex-end;
           }
           .petPlay{
-            border: 1px solid black;
             height: 80%;
             width: 20%;
             font-size: 3.5em;
@@ -69,7 +61,6 @@ function PetControl(){
             align-items: flex-end;
           }
           .petPlay{
-            border: 1px solid black;
             height: 80%;
             width: 20%;
           }
