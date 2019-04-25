@@ -1,11 +1,17 @@
 import React from 'react';
 import Display from './Display';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPoo, faUtensils, faQuidditch } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faPoo, faUtensils, faQuidditch);
 
 function App(){
-    return(
-      <div>
-        <Display/>
-        <style jsx>{`
+
+  return(
+    <div>
+      <Display/>
+      <style jsx>{`
           div {
             display: flex;
             justify-content: center;
@@ -13,8 +19,8 @@ function App(){
             height: 98vh;
           }
         `}</style>
-      </div>
-    );
+    </div>
+  );
 
 }
 

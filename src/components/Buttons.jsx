@@ -13,7 +13,6 @@ function Buttons(){
           width: 60%;
           height: 15%;
           margin-top: 1%;
-          border: 1px solid black;
         }
         button{
           width: 20%;
