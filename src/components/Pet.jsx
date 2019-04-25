@@ -14,6 +14,11 @@ function Pet(props){
           flex-flow: row no-wrap;
           justify-content: space-around;
         }
+        @media only screen and (max-width: 768px){
+          p{
+            font-size: .7em;
+          }
+        }
       `}</style>
     </div>
   );

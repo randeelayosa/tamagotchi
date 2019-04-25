@@ -11,12 +11,13 @@ function Buttons(){
           display: flex;
           justify-content: space-around;
           width: 60%;
-          height: 130px;
-          margin-top: 20px;
+          height: 15%;
+          margin-top: 1%;
+          border: 1px solid black;
         }
         button{
-          width: 80px;
-          height: 80px;
+          width: 20%;
+          height: 60%;
           background-color: blue;
           border: none;
           border-radius: 50%;
@@ -28,6 +29,12 @@ function Buttons(){
         }
         button:hover{
           cursor: pointer;
+        }
+        @media only screen and (max-width: 768px){
+          div{
+            width: 250px;
+            height: 80px;
+          }
         }
       `}</style>
     </div>

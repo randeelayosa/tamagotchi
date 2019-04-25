@@ -1,5 +1,4 @@
 import React from 'react';
-import Pet from './Pet';
 import PetControl from './PetControl';
 import Buttons from './Buttons';
 import logo from '../assets/images/logo2.png';
@@ -37,9 +36,8 @@ function Display(){
         }
         .displayBorder{
           background-color: rgba(102,27,82,.6);
-          width: 620px;
-          height: 580px;
-          margin-top: 25px;
+          width: 76%;
+          height: 58.5%;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -47,12 +45,24 @@ function Display(){
         }
         .displayFrame{
           background-color: rgb(251,227,58);
-          width: 610px;
-          height: 570px;
+          width: 97.8%;
+          height: 98%;
           display: flex;
           justify-content: center;
           align-items: center;
           clip-path: polygon(4% 0, 18% 4%, 44% 0, 71% 5%, 100% 1%, 97% 29%, 100% 46%, 96% 69%, 100% 100%, 68% 97%, 41% 100%, 19% 95%, 0 100%, 2% 68%, 0 37%);
+        }
+        @media only screen and (max-width: 768px){
+          .egg{
+            width: 500px;
+            height: 625px;
+          }
+        }
+        @media only screen and (max-width: 425px){
+          .egg{
+            width: 280px;
+            height: 350px;
+          }
         }
       `}</style>
     </div>
