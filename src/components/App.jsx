@@ -6,50 +6,57 @@ import PropTypes from 'prop-types';
 
 class App extends React.Component {
 
+  decreasingChickenProperties(props) {
+    const { dispatch } = this.props.tamagotchiReducer.chicken;
+    const action = {
+      type: 'UPDATE_TAMAGOTCHI',
+      chicken: {
+        activity: activity,
+        hunger: hunger,
+        happiness: happiness,
+        health: health
+      }
+    };
+    dispatch(action);
+    activity = this.props.tamagotchiReducer.chicken.activity - 1;
+    hunger = this.props.tamagotchiReducer.chicken.hunger - 1;
+    happiness = this.props.tamagotchiReducer.chicken.hunger - 1;
+    health = this.props.tamagotchiReducer.chicken.activity + this.props.tamagotchiReducer.chicken.hunger + this.props.tamagotchiReducer.chicken.happiness;
+  }
+
+
+  // handleIncreaseActivity() {
+  //   const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
+  //   newChicken.activity += 5;
+  //   newChicken.health += 5;
+  //   this.setState({chicken: newChicken});
+  // }
+  //
+  // handleIncreaseHunger() {
+  //   const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
+  //   newChicken.hunger += 5;
+  //   newChicken.health += 5;
+  //   this.setState({chicken: newChicken});
+  // }
+  //
+  // handleIncreaseHappiness() {
+  //   const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
+  //   newChicken.happiness += 5;
+  //   newChicken.health += 5;
+  //   this.setState({chicken: newChicken});
+  // }
+
   componentDidMount() {
     this.updateChickenProperties = setInterval(() =>
-      this.decreasingChickenProperties(),
-    3000
+    this.decreasingChickenProperties(),
+    10000
     );
-  }
-
-  decreasingChickenProperties() {
-    const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
-    console.log(newChicken);
-    newChicken.activity -= 1;
-    newChicken.hunger -= 1;
-    newChicken.happiness -= 1;
-    newChicken.health = newChicken.activity + newChicken.hunger + newChicken.happiness;
-    this.setState({chicken: newChicken});
-  }
-
-  handleIncreaseActivity() {
-    const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
-    newChicken.activity += 5;
-    newChicken.health += 5;
-    this.setState({chicken: newChicken});
-  }
-
-  handleIncreaseHunger() {
-    const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
-    newChicken.hunger += 5;
-    newChicken.health += 5;
-    this.setState({chicken: newChicken});
-  }
-
-  handleIncreaseHappiness() {
-    const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
-    newChicken.happiness += 5;
-    newChicken.health += 5;
-    this.setState({chicken: newChicken});
   }
 
   render(){
     return(
       <div>
         <Route path='/' render={() => <Display chicken={this.props.buttonsReducer}/>} />
-
-
         <style jsx>{`
           div {
             display: flex;
@@ -65,7 +72,8 @@ class App extends React.Component {
 
 App.propTypes = {
   tamagotchiReducer: PropTypes.object,
-  buttonsReducer: PropTypes.object
+  buttonsReducer: PropTypes.object,
+  decreasingChickenProperties: PropTypes.func
 };
 
 const mapStateToProps = state => {
