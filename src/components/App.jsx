@@ -6,23 +6,21 @@ import PropTypes from 'prop-types';
 
 class App extends React.Component {
 
-  decreasingChickenProperties(props) {
-    const { dispatch } = this.props.tamagotchiReducer.chicken;
-    const action = {
-      type: 'UPDATE_TAMAGOTCHI',
-      chicken: {
-        activity: activity,
-        hunger: hunger,
-        happiness: happiness,
-        health: health
-      }
-    };
-    dispatch(action);
-    activity = this.props.tamagotchiReducer.chicken.activity - 1;
-    hunger = this.props.tamagotchiReducer.chicken.hunger - 1;
-    happiness = this.props.tamagotchiReducer.chicken.hunger - 1;
-    health = this.props.tamagotchiReducer.chicken.activity + this.props.tamagotchiReducer.chicken.hunger + this.props.tamagotchiReducer.chicken.happiness;
-  }
+  // decreasingChickenProperties(props) {
+  //   console.log(props)
+  //   const { dispatch } = this.props.tamagotchiReducer.chicken;
+  //   const action = {
+  //     type: 'UPDATE_TAMAGOTCHI',
+  //     chicken: {
+  //       activity: activity - 1,
+  //       hunger: hunger - 1,
+  //       happiness: happiness - 1,
+  //       health: activity + happiness + hunger
+  //     }
+  //   };
+  //   dispatch(action);
+  //
+  // }
 
 
   // handleIncreaseActivity() {
@@ -47,9 +45,10 @@ class App extends React.Component {
   // }
 
   componentDidMount() {
+    console.log(this.props.tamagotchiReducer.chicken)
     this.updateChickenProperties = setInterval(() =>
-    this.decreasingChickenProperties(),
-    10000
+    // this.decreasingChickenProperties(),
+    5000
     );
   }
 
