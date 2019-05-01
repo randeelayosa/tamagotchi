@@ -15,7 +15,7 @@ function Display(props){
           <PetControl chicken={props.chicken}/>
         </div>
       </div>
-      <Buttons chicken={props.chicken} onIncreaseActivity={props.onIncreaseActivity} onIncreaseHunger={props.onIncreaseHunger} onIncreaseHappiness={props.onIncreaseHappiness}/>
+      <Buttons/>
       <style jsx>{`
           .egg {
             display: flex;
@@ -74,6 +74,7 @@ function Display(props){
 }
 
 Display.propTypes = {
+  chicken: PropTypes.object,
   onIncreaseActivity: PropTypes.func,
   onIncreaseHunger: PropTypes.func,
   onIncreaseHappiness: PropTypes.func,

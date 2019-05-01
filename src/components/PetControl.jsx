@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 function PetControl(props){
+
   return(
     <div className='mainDisplay'>
       <div className='healthMeter'>
@@ -45,6 +46,7 @@ function PetControl(props){
             flex-flow: row nowrap;
           }
           .petPoo{
+            border: 1px solid red;
             height: 80%;
             width: 20%;
             font-size: 3.5em;
@@ -87,11 +89,10 @@ function PetControl(props){
     </div>
   );
 }
-//
-// addPoo() {
-//   setInterval() => {
-//       $(".petPoo").append(<FontAwesomeIcon icon="poo"/>)
-//   }5000;)
-// }
+
+
+PetControl.propTypes = {
+  chicken: PropTypes.object,
+};
 
 export default PetControl;
