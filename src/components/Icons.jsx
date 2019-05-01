@@ -2,10 +2,12 @@ import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
 
 library.add(faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall);
 
-function Icons(){
+function Icons(props){
+
   return(
     <div>
       <p className='toilet'><FontAwesomeIcon icon="toilet-paper"/></p>
@@ -39,4 +41,4 @@ function Icons(){
   );
 }
 
-export default Icons;
+export default connect()(Icons);

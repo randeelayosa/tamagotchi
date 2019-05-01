@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
-import buttonsReducer from './reducers/buttons-reducer';
 import { Provider } from 'react-redux';
+import rootReducer from './reducers/index-root-reducer';
 
-const store = createStore(buttonsReducer);
+const store = createStore(rootReducer);
 
 let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 );
+
+unsubscribe();
 
 const render = (Component) => {
   ReactDOM.render(
