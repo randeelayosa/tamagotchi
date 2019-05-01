@@ -57,7 +57,7 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        <Display chicken={this.state.chicken} onIncreaseActivity={this.handleIncreaseActivity} onIncreaseHunger={this.handleIncreaseHunger} onIncreaseHappiness={this.handleIncreaseHappiness}/>
+        <Display chicken={this.state.chicken} onIncreaseActivity={this.handleIncreaseActivity} onIncreaseHunger={this.handleIncreaseHunger} onIncreaseHappiness={this.handleIncreaseHappiness} />
         <style jsx>{`
           div {
             display: flex;

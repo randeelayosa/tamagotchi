@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function Buttons(props){
-  console.log(props.onIncreaseActivity);
+
+function Buttons(){
+
   return(
     <div>
-      <button onClick={props.onIncreaseActivity}></button>
-      <button onClick={props.onIncreaseHunger} className='secondButton'></button>
-      <button onClick={props.onIncreaseHappiness}></button>
+      <button></button>
+      <button className='secondButton'></button>
+      <button></button>
       <style jsx>{`
           div{
             display: flex;
@@ -45,9 +45,9 @@ function Buttons(props){
             }
           }
           `}</style>
-      </div>
-    );
-  }
+    </div>
+  );
+}
 
 
-  export default Buttons;
+export default Buttons;

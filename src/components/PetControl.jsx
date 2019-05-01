@@ -1,11 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import player from '../assets/images/chicken.png';
 import Pet from './Pet';
 import Icons from './Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
 function PetControl(props){
+ console.log(props)
   return(
     <div className='mainDisplay'>
       <div className='healthMeter'>
@@ -84,8 +85,14 @@ function PetControl(props){
             }
           }
           `}</style>
-      </div>
-    );
-  }
+    </div>
+  );
+}
+//
+// addPoo() {
+//   setInterval() => {
+//       $(".petPoo").append(<FontAwesomeIcon icon="poo"/>)
+//   }5000;)
+// }
 
-  export default PetControl;
+export default PetControl;
