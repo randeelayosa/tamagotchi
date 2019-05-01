@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 function PetControl(props){
- console.log(props)
   return(
     <div className='mainDisplay'>
       <div className='healthMeter'>

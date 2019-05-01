@@ -74,9 +74,9 @@ function Display(props){
 }
 
 Display.propTypes = {
-  onIncreaseActivity: PropTypes.number,
-  onIncreaseHunger: PropTypes.number,
-  onIncreaseHappiness: PropTypes.number,
+  onIncreaseActivity: PropTypes.func,
+  onIncreaseHunger: PropTypes.func,
+  onIncreaseHappiness: PropTypes.func,
 };
 
 export default Display;
