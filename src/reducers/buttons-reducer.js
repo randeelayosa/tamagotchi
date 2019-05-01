@@ -1,7 +1,11 @@
 export default (state = {}, action) => {
   switch (action.type) {
-    case 'SELECT_BUTTON':
-    return action.buttonId;
+  case 'SELECT_BUTTON':
+    const { buttonId } = action;
+    let newState = Object.assign({}, state, {
+      buttonId: buttonId,
+    });
+    return newState;
   default:
     return state;
   }

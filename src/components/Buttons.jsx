@@ -1,12 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 
-function Buttons(){
+function Buttons(props){
+  console.log(props);
+  let numberOfClicks = 1;
 
+  function click() {
+    if (numberOfClicks > 2){
+      numberOfClicks = 1;
+    } else {
+      numberOfClicks++;
+      console.log(numberOfClicks);
+    }
+  }
+
+
+  function handleButtonASelect() {
+    const { dispatch } = props;
+    const action = {
+      type: 'SELECT_BUTTON',
+      buttonId: numberOfClicks
+    };
+    dispatch(action);
+  }
   return(
     <div>
-      <button></button>
-      <button className='secondButton'></button>
+      <button onClick={click}></button>
+      <button onClick={handleButtonASelect} className='secondButton'></button>
       <button></button>
       <style jsx>{`
           div{
@@ -46,8 +67,15 @@ function Buttons(){
           }
           `}</style>
     </div>
+
   );
 }
 
 
-export default Buttons;
+
+
+// Buttons.propTypes = {
+//   numberOfClicks: PropTypes.number,
+// }
+
+export default connect()(Buttons);
