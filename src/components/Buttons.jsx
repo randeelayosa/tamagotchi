@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 function Buttons(props){
+  console.log(props);
   let numberOfClicks = 0;
 
   function click() {
@@ -15,7 +16,7 @@ function Buttons(props){
     }
   }
 
-  function handleButtonASelect(props) {
+  function handleButtonASelect() {
     const { dispatch } = props;
     const action = {
       type: 'SELECT_BUTTON',
@@ -103,13 +104,13 @@ function Buttons(props){
             }
           }
           `}</style>
-      </div>
+    </div>
 
-    );
-  }
+  );
+}
 
-  Buttons.propTypes = {
-    numberOfClicks: PropTypes.number,
-  };
+Buttons.propTypes = {
+  numberOfClicks: PropTypes.number,
+};
 
-  export default connect()(Buttons);
+export default connect()(Buttons);

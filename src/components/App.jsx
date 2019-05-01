@@ -1,5 +1,8 @@
 import React from 'react';
 import Display from './Display';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
   constructor(props) {
@@ -57,7 +60,9 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        <Display chicken={this.state.chicken} onIncreaseActivity={this.handleIncreaseActivity} onIncreaseHunger={this.handleIncreaseHunger} onIncreaseHappiness={this.handleIncreaseHappiness} />
+        <Route path='/' render={() => <Display chicken={this.props.buttonsReducer}/>} />
+
+
         <style jsx>{`
           div {
             display: flex;
@@ -71,4 +76,14 @@ class App extends React.Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  buttonsReducer: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    buttonsReducer: state.buttonsReducer
+  };
+};
+
+export default withRouter(connect(mapStateToProps)(App));

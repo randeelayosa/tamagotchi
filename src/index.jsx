@@ -6,13 +6,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/index-root-reducer';
 
+
 const store = createStore(rootReducer);
 
 let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 );
-
-unsubscribe();
 
 const render = (Component) => {
   ReactDOM.render(
