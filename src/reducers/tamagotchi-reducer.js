@@ -18,7 +18,22 @@ export default (state = {}, action) => {
         activity: 100,
         hunger: 100,
         happiness: 100,
-        health: 100
+        health: 100,
+        active: null
+      }
+    });
+    return newState;
+    case 'ACTIVATE_TAMAGOTCHI':
+    newState = ({}, state, {
+      chicken: {
+        active: true
+      }
+    });
+    return newState;
+    case 'DEACTIVATE_TAMAGOTCHI':
+    newState = ({}, state, {
+      chicken: {
+        active: false
       }
     });
     return newState;

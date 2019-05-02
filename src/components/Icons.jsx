@@ -7,10 +7,6 @@ import { connect } from 'react-redux';
 library.add(faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall);
 
 function Icons(props){
-  console.log(props + 'icons');
-
-
-
 
   return(
     <div>

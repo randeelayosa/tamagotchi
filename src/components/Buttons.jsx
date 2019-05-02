@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 
 function Buttons(props){
-  console.log(props);
   let numberOfClicks = 0;
 
   function click() {
@@ -12,7 +11,6 @@ function Buttons(props){
       numberOfClicks = 0;
     } else {
       numberOfClicks++;
-      console.log(numberOfClicks);
     }
   }
 
@@ -34,8 +32,8 @@ function Buttons(props){
         hunger: 100,
         happiness: 100,
         health: 300
-    }
-  };
+      }
+    };
     dispatch(action);
   }
 
