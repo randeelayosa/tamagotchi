@@ -39,10 +39,9 @@ class App extends React.Component {
 
 
   render(){
-    console.log('app', this.props);
     return(
       <div>
-        <Route path='/' render={() => <Display sprite={this.props.tamagotchi} button={this.props.buttons}/>} />
+        <Route path='/' render={() => <Display sprite={this.props.tamagotchi} button={this.props.buttons} icons={this.props.icons}/>} />
         <style jsx>{`
           div {
             display: flex;

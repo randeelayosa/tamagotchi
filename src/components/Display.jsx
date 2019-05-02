@@ -6,6 +6,7 @@ import logo from '../assets/images/logo2.png';
 
 function Display(props){
 
+
   return(
     <div className='egg'>
       <div className='logo'>
@@ -13,7 +14,7 @@ function Display(props){
       </div>
       <div className='displayBorder'>
         <div className='displayFrame'>
-          <PetControl sprite={props.sprite}/>
+          <PetControl sprite={props.sprite} icons={props.icons}/>
         </div>
       </div>
       <Buttons/>

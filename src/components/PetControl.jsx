@@ -43,7 +43,7 @@ function PetControl(props){
         </div>
       </div>
       <div className='healthIcons'>
-        <Icons sprite={props.sprite}/>
+        <Icons icons={props.icons}/>
       </div>
       <style jsx>{`
         .mainDisplay{

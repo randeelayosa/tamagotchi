@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 
 function Buttons(props){
-  let numberOfClicks = 0;
-  let iconNumberOfClicks = 0;
+  let numberOfClicks = -1;
+  let iconNumberOfClicks = -1;
 
 
   function click() {
-    if (numberOfClicks > 1){
+    if (numberOfClicks == 2){
       numberOfClicks = 0;
       iconNumberOfClicks = 0;
     } else {
@@ -52,7 +52,6 @@ function Buttons(props){
     click();
     handleIconASelect();
   }
-
   return(
     <div className='buttonPosition'>
       <div className='toolTip'>
