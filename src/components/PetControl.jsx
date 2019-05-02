@@ -58,8 +58,13 @@ function PetControl(props){
           <FontAwesomeIcon icon="poo"/>
         </div>
         <img src={player}/>
-        <div style={spritePlay} className='petPlay'>
-          <FontAwesomeIcon icon="baseball-ball"/>
+        <div className='eatPlay'>
+          <div style={spriteEat} className='petEat'>
+            <FontAwesomeIcon icon="drumstick-bite"/>
+          </div>
+          <div style={spritePlay} className='petPlay'>
+            <FontAwesomeIcon icon="circle"/>
+          </div>
         </div>
       </div>
       <div className='healthIcons'>
@@ -91,9 +96,21 @@ function PetControl(props){
           align-items: flex-end;
           opacity: .15;
         }
-        .petPlay{
-          height: 80%;
+        .eatPlay{
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-around;
+          height: 100%;
           width: 20%;
+        }
+        .petEat{
+          font-size: 3.5em;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          opacity: .15;
+        }
+        .petPlay{
           font-size: 3.5em;
           display: flex;
           justify-content: center;

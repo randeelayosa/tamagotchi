@@ -1,11 +1,11 @@
 import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall } from '@fortawesome/free-solid-svg-icons';
+import { faPoo, faUtensils, faToiletPaper, faQuidditch, faCircle, faDrumstickBite} from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-library.add(faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall);
+library.add(faPoo, faUtensils, faToiletPaper, faQuidditch, faCircle, faDrumstickBite);
 
 function Icons(props){
 let firstIcon;
