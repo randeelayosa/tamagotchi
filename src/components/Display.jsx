@@ -14,7 +14,7 @@ function Display(props){
       </div>
       <div className='displayBorder'>
         <div className='displayFrame'>
-          <PetControl sprite={props.sprite} icons={props.icons}/>
+          <PetControl sprite={props.sprite} buttons={props.buttons} icons={props.icons}/>
         </div>
       </div>
       <Buttons/>
@@ -77,7 +77,7 @@ function Display(props){
 
 Display.propTypes = {
   chicken: PropTypes.object,
-  button: PropTypes.object
+  buttons: PropTypes.object
 };
 
 export default Display;

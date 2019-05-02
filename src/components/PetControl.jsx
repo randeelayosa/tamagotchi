@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 function PetControl(props){
+  console.log('buttonIdprops', props.buttons.buttonId)
 
   function componentDidMount() {
     const { dispatch } = props;
@@ -24,6 +25,25 @@ function PetControl(props){
 
 
 
+  let spritePoop;
+  let spriteEat;
+  let spritePlay;
+
+  if(props.buttons.buttonId === 0) {
+    spritePoop = {
+      opacity: '1'
+    };
+  } else if(props.buttons.buttonId === 1) {
+    spriteEat = {
+      opacity: '1'
+    };
+  } else if(props.buttons.buttonId === 2) {
+    spritePlay = {
+      opacity: '1'
+    };
+  }
+
+
   return(
     <div onClick={componentDidMount} className='mainDisplay'>
       <div className='healthMeter'>
@@ -34,11 +54,11 @@ function PetControl(props){
           health={props.sprite.health}/>
       </div>
       <div className='petIcon'>
-        <div className='petPoo'>
+        <div style={spritePoop} className='petPoo'>
           <FontAwesomeIcon icon="poo"/>
         </div>
         <img src={player}/>
-        <div className='petPlay'>
+        <div style={spritePlay} className='petPlay'>
           <FontAwesomeIcon icon="baseball-ball"/>
         </div>
       </div>
@@ -69,6 +89,7 @@ function PetControl(props){
           display: flex;
           justify-content: center;
           align-items: flex-end;
+          opacity: .15;
         }
         .petPlay{
           height: 80%;
@@ -77,6 +98,7 @@ function PetControl(props){
           display: flex;
           justify-content: center;
           align-items: flex-end;
+          opacity: .15;
         }
         img {
           width: auto;
@@ -106,7 +128,8 @@ function PetControl(props){
   );
 }
 
+PetControl.propTypes = {
+  buttons: PropTypes.object
+}
 
-PetControl = connect()(PetControl);
-
-export default PetControl;
+export default connect()(PetControl);
