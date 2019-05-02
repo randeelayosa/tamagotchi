@@ -5,6 +5,7 @@ import Icons from './Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+// import { keyframes } from 'styled-components';
 
 function PetControl(props){
   console.log('buttonIdprops', props.buttons.buttonId)
@@ -23,7 +24,11 @@ function PetControl(props){
     );
   }
 
-
+  // const makePoo = keyframes`
+  //   to {
+  //     tranform: translateX(-10);
+  //   }
+  // `;
 
   let spritePoop;
   let spriteEat;
@@ -31,7 +36,7 @@ function PetControl(props){
 
   if(props.buttons.buttonId === 0) {
     spritePoop = {
-      opacity: '1'
+      opacity: '1',
     };
   } else if(props.buttons.buttonId === 1) {
     spriteEat = {
@@ -42,6 +47,8 @@ function PetControl(props){
       opacity: '1'
     };
   }
+
+
 
 
   return(
@@ -95,6 +102,7 @@ function PetControl(props){
           justify-content: center;
           align-items: flex-end;
           opacity: .15;
+          animation: poopingAnimation 5s linear infinite;
         }
         .eatPlay{
           display: flex;
@@ -139,6 +147,12 @@ function PetControl(props){
           .petPlay{
             font-size: 1em;
           }
+        }
+        @keyframes poopingAnimation {
+          0% {}
+          100% {transform: translateX(-50px);}
+        }
+
         }
         `}</style>
     </div>
