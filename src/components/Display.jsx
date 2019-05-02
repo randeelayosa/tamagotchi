@@ -6,7 +6,7 @@ import logo from '../assets/images/logo2.png';
 
 function Display(props){
 
-  console.log(props)
+  console.log(props.sprite)
 
   return(
     <div className='egg'>
@@ -15,7 +15,7 @@ function Display(props){
       </div>
       <div className='displayBorder'>
         <div className='displayFrame'>
-          <PetControl chicken={props.chicken}/>
+          <PetControl sprite={props.sprite}/>
         </div>
       </div>
       <Buttons/>

@@ -5,9 +5,25 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    setInterval(() => {
+      const action = {
+        type: 'UPDATE_TAMAGOTCHI',
+      };
+      dispatch(action);
+    },5000
+  );
+}
 
   // handleIncreaseActivity() {
-  //   const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
+  //   const newChicken = Object.assign({}, this.props.tamagotchi.chicken);
   //   newChicken.activity += 5;
   //   newChicken.health += 5;
   //   this.setState({chicken: newChicken});
@@ -31,9 +47,10 @@ class App extends React.Component {
 
 
   render(){
+    console.log("app", this.props)
     return(
       <div>
-        <Route path='/' render={() => <Display chicken={this.props.tamagotchiReducer} button={this.props.buttonsReducer}/>} />
+        <Route path='/' render={() => <Display sprite={this.props.tamagotchi} button={this.props.buttons}/>} />
         <style jsx>{`
           div {
             display: flex;
@@ -53,10 +70,11 @@ App.propTypes = {
   buttonsReducer: PropTypes.object,
 };
 
+//tamagotchi is the state slice that is being passed to Display seen above
 const mapStateToProps = state => {
   return {
-    tamagotchiReducer: state.tamagotchiReducer,
-    buttonsReducer: state.buttonsReducer
+    tamagotchi: state.tamagotchi,
+    buttons: state.buttons
   };
 };
 

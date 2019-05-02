@@ -8,41 +8,21 @@ import { connect } from 'react-redux';
 
 function PetControl(props){
 
-  function consoleLOGGING() {
-    console.log(props);
-    console.log(props.chicken.chicken.activity + 'HEY RANDEE');
-  }
+    console.log(props, ' PetControl');
+    console.log(props.sprite.activity, ' HEY RANDEE');
+
   // why are you props.chicken.chicken!?
 
-  
-  //
-  //   componentDidMount() {
-  //     setInterval(() =>
-  //     const { dispatch } = props;
-  //     const action = {
-  //       type: 'UPDATE_TAMAGOTCHI',
-  //       chicken: {
-  //         activity: activity,
-  //         hunger: hunger,
-  //         happiness: happiness
-  //       }
-  //     };
-  //     dispatch(action);
-  //     activity = props.chicken.activity - 1,
-  //     happiness = props.chicken.happiness - 1,
-  //     happiness = props.chicken.happiness - 1,
-  //     5000
-  //   );
-  // }
+
 
   return(
-    <div onClick={consoleLOGGING} className='mainDisplay'>
+    <div className='mainDisplay'>
       <div className='healthMeter'>
         <Pet
-          activity={props.chicken.activity}
-          hunger={props.chicken.hunger}
-          happiness={props.chicken.happiness}
-          health={props.chicken.health}/>
+          activity={props.sprite.activity}
+          hunger={props.sprite.hunger}
+          happiness={props.sprite.happiness}
+          health={props.sprite.health}/>
       </div>
       <div className='petIcon'>
         <div className='petPoo'>
@@ -120,7 +100,7 @@ function PetControl(props){
 
 
 PetControl.propTypes = {
-  chicken: PropTypes.func,
+  chicken: PropTypes.object,
 };
 
 PetControl = connect()(PetControl);
