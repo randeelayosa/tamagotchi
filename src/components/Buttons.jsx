@@ -25,6 +25,20 @@ function Buttons(props){
     dispatch(action);
   }
 
+  function handleButtonCSelect() {
+    const { dispatch } = props;
+    const action = {
+      type: 'CREATE_TAMAGOTCHI',
+      chicken: {
+        activity: 100,
+        hunger: 100,
+        happiness: 100,
+        health: 300
+    }
+  };
+    dispatch(action);
+  }
+
   return(
     <div className='buttonPosition'>
       <div className='toolTip'>
@@ -36,7 +50,7 @@ function Buttons(props){
         <span className='toolTipText'>B<br/><br/>Select</span>
       </div>
       <div className='toolTip'>
-        <button></button>
+        <button onClick={handleButtonCSelect}></button>
         <span className='toolTipText'>C<br/><br/>Home</span>
       </div>
       <style jsx>{`
