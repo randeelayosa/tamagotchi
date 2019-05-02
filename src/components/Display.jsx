@@ -6,8 +6,6 @@ import logo from '../assets/images/logo2.png';
 
 function Display(props){
 
-  console.log(props.sprite)
-
   return(
     <div className='egg'>
       <div className='logo'>

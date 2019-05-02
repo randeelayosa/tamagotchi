@@ -7,6 +7,10 @@ import { connect } from 'react-redux';
 library.add(faPoo, faUtensils, faToiletPaper, faQuidditch, faBaseballBall);
 
 function Icons(props){
+  console.log('icons', props.sprite);
+
+
+
 
   return(
     <div>
@@ -41,10 +45,5 @@ function Icons(props){
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    buttonsReducer: state
-  };
-};
 
 export default connect()(Icons);

@@ -5,14 +5,20 @@ import { connect } from 'react-redux';
 
 function Buttons(props){
   let numberOfClicks = 0;
+  let iconNumberOfClicks = 0;
+
 
   function click() {
     if (numberOfClicks > 1){
       numberOfClicks = 0;
+      iconNumberOfClicks = 0;
     } else {
       numberOfClicks++;
+      iconNumberOfClicks++;
     }
   }
+
+
 
   function handleButtonASelect() {
     const { dispatch } = props;
@@ -31,19 +37,35 @@ function Buttons(props){
     dispatch(action);
   }
 
+
+  function handleIconASelect() {
+    const { dispatch } = props;
+    const action = {
+      type: 'SELECT_ICON',
+      iconId: iconNumberOfClicks
+    };
+    dispatch(action);
+  }
+
+
+  function handleIconChange() {
+    click();
+    handleIconASelect();
+  }
+
   return(
     <div className='buttonPosition'>
       <div className='toolTip'>
-        <button onClick={click}></button>
-        <span className='toolTipText'>A<br/><br/>Toggle Icons</span>
+        <button onClick={handleIconChange}></button>
+        <span className='button0 toolTipText'>A<br/><br/>Toggle Icons</span>
       </div>
       <div className='toolTip secondButton'>
         <button onClick={handleButtonASelect}></button>
-        <span className='toolTipText'>B<br/><br/>Select</span>
+        <span className='button1 toolTipText'>B<br/><br/>Select</span>
       </div>
       <div className='toolTip'>
         <button onClick={handleButtonCSelect}></button>
-        <span className='toolTipText'>C<br/><br/>Home</span>
+        <span className='button2 toolTipText'>C<br/><br/>Home</span>
       </div>
       <style jsx>{`
           .buttonPosition{

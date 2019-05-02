@@ -8,24 +8,19 @@ import { connect } from 'react-redux';
 
 function PetControl(props){
 
-    console.log(props, ' PetControl');
-    console.log(props.sprite.activity, ' HEY RANDEE');
-
-  // why are you props.chicken.chicken!?
-
-function componentDidMount() {
-        const { dispatch } = props;
-        setInterval(() => {
-          const action = {
-            type: 'UPDATE_TAMAGOTCHI',
-            activity: props.sprite.activity -= 1,
-            hunger: props.sprite.hunger -= 1,
-            happiness: props.sprite.happiness -= 1
-          };
-          dispatch(action);
-        },5000
-      );
-    }
+  function componentDidMount() {
+    const { dispatch } = props;
+    setInterval(() => {
+      const action = {
+        type: 'UPDATE_TAMAGOTCHI',
+        activity: props.sprite.activity -= 1,
+        hunger: props.sprite.hunger -= 4,
+        happiness: props.sprite.happiness -= 2
+      };
+      dispatch(action);
+    },5000
+    );
+  }
 
 
 
@@ -48,7 +43,7 @@ function componentDidMount() {
         </div>
       </div>
       <div className='healthIcons'>
-        <Icons/>
+        <Icons sprite={props.sprite}/>
       </div>
       <style jsx>{`
         .mainDisplay{
@@ -68,7 +63,6 @@ function componentDidMount() {
           flex-flow: row nowrap;
         }
         .petPoo{
-          border: 1px solid red;
           height: 80%;
           width: 20%;
           font-size: 3.5em;
@@ -112,10 +106,6 @@ function componentDidMount() {
   );
 }
 
-
-PetControl.propTypes = {
-  chicken: PropTypes.object,
-};
 
 PetControl = connect()(PetControl);
 

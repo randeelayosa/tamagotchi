@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
 
@@ -39,7 +39,7 @@ class App extends React.Component {
 
 
   render(){
-    console.log("app", this.props)
+    console.log('app', this.props);
     return(
       <div>
         <Route path='/' render={() => <Display sprite={this.props.tamagotchi} button={this.props.buttons}/>} />
@@ -66,7 +66,8 @@ App.propTypes = {
 const mapStateToProps = state => {
   return {
     tamagotchi: state.tamagotchi,
-    buttons: state.buttons
+    buttons: state.buttons,
+    icons: state.icons
   };
 };
 

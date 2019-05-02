@@ -4,20 +4,20 @@ export default (state = { }, action) => {
   case 'UPDATE_TAMAGOTCHI':
     const { activity, hunger, happiness } = action;
     newState = Object.assign({}, {
-        activity: activity,
-        hunger: hunger,
-        happiness: happiness,
-        health: activity + hunger + happiness
+      activity: activity,
+      hunger: hunger,
+      happiness: happiness,
+      health: activity + hunger + happiness
     });
     return newState;
   case 'CREATE_TAMAGOTCHI':
     newState = Object.assign({}, state, {
 
-        activity: 100,
-        hunger: 100,
-        happiness: 100,
-        health: 300,
-        active: null
+      activity: 100,
+      hunger: 100,
+      happiness: 100,
+      health: 300,
+      active: true
     });
     return newState;
   case 'ACTIVATE_TAMAGOTCHI':
