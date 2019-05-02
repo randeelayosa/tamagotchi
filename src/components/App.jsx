@@ -45,10 +45,10 @@ class App extends React.Component {
   // }
 
   componentDidMount() {
-    console.log(this.props.tamagotchiReducer.chicken)
+    console.log(this.props.tamagotchiReducer.chicken);
     this.updateChickenProperties = setInterval(() =>
     // this.decreasingChickenProperties(),
-    5000
+      5000
     );
   }
 
