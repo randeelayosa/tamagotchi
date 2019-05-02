@@ -7,6 +7,7 @@ export default (state = { }, action) => {
         activity: activity,
         hunger: hunger,
         happiness: happiness,
+        health: activity + hunger + happiness
     });
     return newState;
   case 'CREATE_TAMAGOTCHI':
