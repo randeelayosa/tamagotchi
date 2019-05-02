@@ -27,12 +27,6 @@ function Buttons(props){
     const { dispatch } = props;
     const action = {
       type: 'CREATE_TAMAGOTCHI',
-      chicken: {
-        activity: 100,
-        hunger: 100,
-        happiness: 100,
-        health: 300
-      }
     };
     dispatch(action);
   }

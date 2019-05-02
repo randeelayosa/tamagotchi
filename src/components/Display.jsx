@@ -5,6 +5,9 @@ import Buttons from './Buttons';
 import logo from '../assets/images/logo2.png';
 
 function Display(props){
+
+  console.log(props)
+
   return(
     <div className='egg'>
       <div className='logo'>
@@ -75,9 +78,7 @@ function Display(props){
 
 Display.propTypes = {
   chicken: PropTypes.object,
-  onIncreaseActivity: PropTypes.func,
-  onIncreaseHunger: PropTypes.func,
-  onIncreaseHappiness: PropTypes.func,
+  button: PropTypes.object
 };
 
 export default Display;
