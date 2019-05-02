@@ -15,7 +15,7 @@ _This application uses React to create a web replica of the popular 90's Japanes
 <p align="center">Original toy | Screenshot</p>
 <p align="center">
 <img src="src/assets/images/toy.jpeg" width="350" height="270" title="image of original toy">
-<img src="src/assets/images/##.png" width="350" height="270" title="screenshot">
+<img src="src/assets/images/tama.png" width="350" height="270" title="screenshot">
 </p>
 
 ## Technologies Used
