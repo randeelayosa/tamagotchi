@@ -11,16 +11,8 @@ class App extends React.Component {
 
 
 
-  componentDidMount() {
-    const { dispatch } = this.props;
-    setInterval(() => {
-      const action = {
-        type: 'UPDATE_TAMAGOTCHI',
-      };
-      dispatch(action);
-    },5000
-  );
-}
+
+
 
   // handleIncreaseActivity() {
   //   const newChicken = Object.assign({}, this.props.tamagotchi.chicken);

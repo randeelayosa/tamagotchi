@@ -13,10 +13,24 @@ function PetControl(props){
 
   // why are you props.chicken.chicken!?
 
+function componentDidMount() {
+        const { dispatch } = props;
+        setInterval(() => {
+          const action = {
+            type: 'UPDATE_TAMAGOTCHI',
+            activity: props.sprite.activity -= 1,
+            hunger: props.sprite.hunger -= 1,
+            happiness: props.sprite.happiness -= 1
+          };
+          dispatch(action);
+        },5000
+      );
+    }
+
 
 
   return(
-    <div className='mainDisplay'>
+    <div onClick={componentDidMount} className='mainDisplay'>
       <div className='healthMeter'>
         <Pet
           activity={props.sprite.activity}

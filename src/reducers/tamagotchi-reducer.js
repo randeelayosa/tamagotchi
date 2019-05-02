@@ -1,17 +1,12 @@
-export default (state = { activity: 100,
-                          hunger: 100,
-                          happiness: 100,
-                          health: 300,
-                          active: null
-                        }, action) => {
+export default (state = { }, action) => {
   let newState;
   switch (action.type) {
   case 'UPDATE_TAMAGOTCHI':
     const { activity, hunger, happiness } = action;
     newState = Object.assign({}, {
-        activity: activity - 1,
-        hunger: hunger - 1,
-        happiness: happiness - 1,
+        activity: activity,
+        hunger: hunger,
+        happiness: happiness,
     });
     return newState;
   case 'CREATE_TAMAGOTCHI':
