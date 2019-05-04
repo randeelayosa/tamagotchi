@@ -8,9 +8,9 @@ import PropTypes from 'prop-types';
 library.add(faPoo, faUtensils, faToiletPaper, faQuidditch, faCircle, faDrumstickBite);
 
 function Icons(props){
-let firstIcon;
-let secondIcon;
-let thirdIcon;
+  let firstIcon;
+  let secondIcon;
+  let thirdIcon;
 
   if(props.icons.iconId === 0) {
     firstIcon = {
@@ -65,7 +65,7 @@ let thirdIcon;
 
 Icons.propTypes = {
   icons: PropTypes.object
-}
+};
 
 
 export default connect()(Icons);

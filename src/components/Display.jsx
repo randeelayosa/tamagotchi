@@ -76,8 +76,10 @@ function Display(props){
 }
 
 Display.propTypes = {
-  chicken: PropTypes.object,
-  buttons: PropTypes.object
+  sprite: PropTypes.object,
+  buttons: PropTypes.object,
+  icons: PropTypes.object,
+  dispatch: PropTypes.func
 };
 
 export default Display;

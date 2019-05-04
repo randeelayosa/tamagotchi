@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 // import { keyframes } from 'styled-components';
 
 function PetControl(props){
-  console.log('buttonIdprops', props.buttons.buttonId)
+  console.log('buttonIdprops', props.buttons.buttonId);
 
   function componentDidMount() {
     const { dispatch } = props;
@@ -160,7 +160,10 @@ function PetControl(props){
 }
 
 PetControl.propTypes = {
-  buttons: PropTypes.object
-}
+  buttons: PropTypes.object,
+  icons: PropTypes.object,
+  sprite: PropTypes.object,
+  dispatch: PropTypes.func
+};
 
 export default connect()(PetControl);

@@ -1,6 +1,6 @@
 import React from 'react';
 import Display from './Display';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -57,8 +57,10 @@ class App extends React.Component {
 
 
 App.propTypes = {
-  tamagotchiReducer: PropTypes.object,
-  buttonsReducer: PropTypes.object,
+  tamagotchi: PropTypes.object,
+  buttons: PropTypes.object,
+  icons: PropTypes.object,
+
 };
 
 //tamagotchi is the state slice that is being passed to Display seen above

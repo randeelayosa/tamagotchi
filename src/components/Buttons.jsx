@@ -137,7 +137,7 @@ function Buttons(props){
 }
 
 Buttons.propTypes = {
-  numberOfClicks: PropTypes.number,
+  dispatch: PropTypes.func
 };
 
 export default connect()(Buttons);
