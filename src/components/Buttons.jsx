@@ -54,7 +54,6 @@ function Buttons(props){
     console.log('initial state', props.sprite);
     if(props.sprite.active === null) {
       handleButtonCSelect();
-      props.componentDidMount();
       console.log('handleC activated');
 
     } else if(props.sprite.active === false){

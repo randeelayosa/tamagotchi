@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 function PetControl(props){
 
-  function componentDidMount() {
+  if(props.sprite.active == true) {
     const { dispatch } = props;
     setInterval(() => {
       const action = {
@@ -22,12 +22,6 @@ function PetControl(props){
       dispatch(action);
     },5000);
   }
-
-  // const makePoo = keyframes`
-  //   to {
-  //     tranform: translateX(-10);
-  //   }
-  // `;
 
   let spritePoop;
   let spriteEat;
@@ -77,81 +71,81 @@ function PetControl(props){
         <Icons icons={props.icons}/>
       </div>
       <style jsx>{`
-        .mainDisplay{
-          border-radius: 20px;
-          background-color: rgb(156, 164, 160);
-          box-shadow: inset 0px 0px 15px 12px rgb(111, 114, 113);
-          width: 90%;
-          height: 85%;
-          display: flex;
-          flex-direction: column;
-        }
-        .petIcon{
-          height: 80%;
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          flex-flow: row nowrap;
-        }
-        .petPoo{
-          height: 80%;
-          width: 20%;
-          font-size: 3.5em;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-          opacity: .15;
-          animation: poopingAnimation 5s linear infinite;
-        }
-        .eatPlay{
-          display: flex;
-          flex-flow: column nowrap;
-          justify-content: space-around;
-          height: 100%;
-          width: 20%;
-        }
-        .petEat{
-          font-size: 3.5em;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-          opacity: .15;
-        }
-        .petPlay{
-          font-size: 3.5em;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-          opacity: .15;
-        }
-        img{
-          width: auto;
-          height: 85%;
-        }
-        .healthIcons{
-          height: 18%;
-        }
-        @media only screen and (max-width: 768px){
-          .petPoo, .petPlay, .petEat{
-            font-size: .8em;
+          .mainDisplay{
+            border-radius: 20px;
+            background-color: rgb(156, 164, 160);
+            box-shadow: inset 0px 0px 15px 12px rgb(111, 114, 113);
+            width: 90%;
+            height: 85%;
+            display: flex;
+            flex-direction: column;
           }
-        }
-        @media only screen and (max-width: 425px){
-          .petPoo, .petPlay, .petEat{
-            font-size: 1em;
+          .petIcon{
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-flow: row nowrap;
           }
           .petPoo{
-            animation: poopingAnimationSmall 5s linear infinite;
+            height: 80%;
+            width: 20%;
+            font-size: 3.5em;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            opacity: .15;
+            animation: poopingAnimation 5s linear infinite;
           }
-        }
-        @keyframes poopingAnimation {
-          0% {transform: translateX(70px);}
-          100% {transform: translateX(-35px);}
-        }
-        @keyframes poopingAnimationSmall {
-          0% {transform: translateX(45px);}
-          100% {transform: translateX(-15px);}
-        }
+          .eatPlay{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-around;
+            height: 100%;
+            width: 20%;
+          }
+          .petEat{
+            font-size: 3.5em;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            opacity: .15;
+          }
+          .petPlay{
+            font-size: 3.5em;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            opacity: .15;
+          }
+          img{
+            width: auto;
+            height: 85%;
+          }
+          .healthIcons{
+            height: 18%;
+          }
+          @media only screen and (max-width: 768px){
+            .petPoo, .petPlay, .petEat{
+              font-size: .8em;
+            }
+          }
+          @media only screen and (max-width: 425px){
+            .petPoo, .petPlay, .petEat{
+              font-size: 1em;
+            }
+            .petPoo{
+              animation: poopingAnimationSmall 5s linear infinite;
+            }
+          }
+          @keyframes poopingAnimation {
+            0% {transform: translateX(70px);}
+            100% {transform: translateX(-35px);}
+          }
+          @keyframes poopingAnimationSmall {
+            0% {transform: translateX(45px);}
+            100% {transform: translateX(-15px);}
+          }
 
         }
         `}</style>
