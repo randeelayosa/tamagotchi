@@ -8,10 +8,6 @@ import { connect } from 'react-redux';
 
 function PetControl(props){
 
-let intervalVariable = setInterval(updateTamaProperties, 5000);
-
-
-
 function updateTamaProperties(){
     const { dispatch } = props;
       const action = {
@@ -29,6 +25,7 @@ function updateTamaProperties(){
     clearInterval(intervalVariable);
   }
   else if(props.sprite.active === true) {
+    setInterval(updateTamaProperties, 5000);
   }
 
 
