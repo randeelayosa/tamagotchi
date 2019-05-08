@@ -5,13 +5,15 @@ import Icons from './Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { keyframes } from 'styled-components';
 
 function PetControl(props){
 
-  if(props.sprite.active == true) {
+let intervalVariable = setInterval(updateTamaProperties, 5000);
+
+
+
+function updateTamaProperties(){
     const { dispatch } = props;
-    setInterval(() => {
       const action = {
         type: 'UPDATE_TAMAGOTCHI',
         activity: props.sprite.activity -= 1,
@@ -20,8 +22,15 @@ function PetControl(props){
         active: props.sprite.active
       };
       dispatch(action);
-    },5000);
   }
+
+
+  if(props.sprite.active === false) {
+    clearInterval(intervalVariable);
+  }
+  else if(props.sprite.active === true) {
+  }
+
 
   let spritePoop;
   let spriteEat;

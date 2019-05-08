@@ -2,7 +2,7 @@ export default (state = {active: null}, action) => {
   let newState;
   let { activity, hunger, happiness, active } = action;
   switch (action.type) {
-    case 'UPDATE_TAMAGOTCHI':
+  case 'UPDATE_TAMAGOTCHI':
     newState = Object.assign({}, {
       activity: activity,
       hunger: hunger,
@@ -11,7 +11,7 @@ export default (state = {active: null}, action) => {
       active: active
     });
     return newState;
-    case 'CREATE_TAMAGOTCHI':
+  case 'CREATE_TAMAGOTCHI':
     newState = Object.assign({}, state, {
       activity: 100,
       hunger: 100,
@@ -20,7 +20,7 @@ export default (state = {active: null}, action) => {
       active: true
     });
     return newState;
-    case 'ACTIVATE_TAMAGOTCHI':
+  case 'ACTIVATE_TAMAGOTCHI':
     newState = Object.assign({}, state, {
       activity: activity,
       hunger: hunger,
@@ -29,7 +29,7 @@ export default (state = {active: null}, action) => {
       active: true
     });
     return newState;
-    case 'DEACTIVATE_TAMAGOTCHI':
+  case 'DEACTIVATE_TAMAGOTCHI':
     newState = Object.assign({}, state, {
       activity: activity,
       hunger: hunger,
@@ -38,7 +38,7 @@ export default (state = {active: null}, action) => {
       active: false
     });
     return newState;
-    default:
+  default:
     return state;
   }
 };

@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
-import PetControl from './PetControl';
-
 
 function Buttons(props){
   let numberOfClicks = -1;
@@ -182,6 +179,6 @@ function Buttons(props){
 Buttons.propTypes = {
   dispatch: PropTypes.func,
   sprite: PropTypes.object
-}
+};
 
 export default connect()(Buttons);
