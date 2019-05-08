@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Route, withRouter } from 'react-router-dom';
+import PetControl from './PetControl';
 
 
 function Buttons(props){
   let numberOfClicks = -1;
   let iconNumberOfClicks = -1;
-
 
   function click() {
     if (numberOfClicks == 2){
@@ -17,8 +18,6 @@ function Buttons(props){
       iconNumberOfClicks++;
     }
   }
-
-
 
   function handleButtonASelect() {
     const { dispatch } = props;
@@ -37,7 +36,6 @@ function Buttons(props){
     dispatch(action);
   }
 
-
   function handleIconASelect() {
     const { dispatch } = props;
     const action = {
@@ -47,11 +45,45 @@ function Buttons(props){
     dispatch(action);
   }
 
-
   function handleIconChange() {
     click();
     handleIconASelect();
   }
+
+  function startStop() {
+    console.log('initial state', props.sprite);
+    if(props.sprite.active === null) {
+      handleButtonCSelect();
+      props.componentDidMount();
+      console.log('handleC activated');
+
+    } else if(props.sprite.active === false){
+      const { dispatch } = props;
+      const action = {
+        type: 'ACTIVATE_TAMAGOTCHI',
+        activity: props.sprite.activity,
+        hunger: props.sprite.hunger,
+        happiness: props.sprite.happiness,
+        active: true
+      };
+      console.log('turned true');
+      dispatch(action);
+
+    } else if(props.sprite.active === true) {
+      const { dispatch } = props;
+      const action = {
+        type: 'DEACTIVATE_TAMAGOTCHI',
+        activity: props.sprite.activity,
+        hunger: props.sprite.hunger,
+        happiness: props.sprite.happiness,
+        active: false
+      };
+      console.log('turned false');
+      dispatch(action);
+    }
+  }
+
+
   return(
     <div className='buttonPosition'>
       <div className='toolTip'>
@@ -63,7 +95,7 @@ function Buttons(props){
         <span className='button1 toolTipText'>B<br/><br/>Select</span>
       </div>
       <div className='toolTip'>
-        <button onClick={handleButtonCSelect}></button>
+        <button onClick={startStop}></button>
         <span className='button2 toolTipText'>C<br/><br/>Home<br/>Start/Stop</span>
       </div>
       <style jsx>{`
@@ -136,8 +168,21 @@ function Buttons(props){
   );
 }
 
+//
+// const mapStateToProps = state => {
+//   console.log('start', mapStateToProps);
+//   console.log('start state', state);
+//   return {
+//     tamagotchi: state.tamagotchi,
+//     buttons: state.buttons,
+//     icons: state.icons
+//   };
+// }
+// console.log('end',mapStateToProps);
+
 Buttons.propTypes = {
-  dispatch: PropTypes.func
-};
+  dispatch: PropTypes.func,
+  sprite: PropTypes.object
+}
 
 export default connect()(Buttons);

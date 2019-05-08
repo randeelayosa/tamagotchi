@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 // import { keyframes } from 'styled-components';
 
 function PetControl(props){
-  console.log('buttonIdprops', props.buttons.buttonId);
 
   function componentDidMount() {
     const { dispatch } = props;
@@ -17,7 +16,8 @@ function PetControl(props){
         type: 'UPDATE_TAMAGOTCHI',
         activity: props.sprite.activity -= 1,
         hunger: props.sprite.hunger -= 4,
-        happiness: props.sprite.happiness -= 2
+        happiness: props.sprite.happiness -= 2,
+        active: props.sprite.active
       };
       dispatch(action);
     },5000);
@@ -51,7 +51,7 @@ function PetControl(props){
 
 
   return(
-    <div onClick={componentDidMount} className='mainDisplay'>
+    <div className='mainDisplay'>
       <div className='healthMeter'>
         <Pet
           activity={props.sprite.activity}

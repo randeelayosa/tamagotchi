@@ -9,9 +9,9 @@ import rootReducer from './reducers/index-root-reducer';
 
 const store = createStore(rootReducer);
 
-let unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-);
+// let unsubscribe = store.subscribe(() =>
+//   console.log('subscribe', store.getState())
+// );
 
 const render = (Component) => {
   ReactDOM.render(
