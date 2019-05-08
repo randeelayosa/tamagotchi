@@ -64,7 +64,7 @@ function Buttons(props){
       </div>
       <div className='toolTip'>
         <button onClick={handleButtonCSelect}></button>
-        <span className='button2 toolTipText'>C<br/><br/>Home</span>
+        <span className='button2 toolTipText'>C<br/><br/>Home<br/>Start/Stop</span>
       </div>
       <style jsx>{`
           .buttonPosition{

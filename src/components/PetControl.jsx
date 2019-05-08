@@ -20,8 +20,7 @@ function PetControl(props){
         happiness: props.sprite.happiness -= 2
       };
       dispatch(action);
-    },5000
-    );
+    },5000);
   }
 
   // const makePoo = keyframes`
@@ -125,7 +124,7 @@ function PetControl(props){
           align-items: flex-end;
           opacity: .15;
         }
-        img {
+        img{
           width: auto;
           height: 85%;
         }
@@ -133,24 +132,25 @@ function PetControl(props){
           height: 18%;
         }
         @media only screen and (max-width: 768px){
-          .petPoo{
-            font-size: .8em;
-          }
-          .petPlay{
+          .petPoo, .petPlay, .petEat{
             font-size: .8em;
           }
         }
         @media only screen and (max-width: 425px){
-          .petPoo{
+          .petPoo, .petPlay, .petEat{
             font-size: 1em;
           }
-          .petPlay{
-            font-size: 1em;
+          .petPoo{
+            animation: poopingAnimationSmall 5s linear infinite;
           }
         }
         @keyframes poopingAnimation {
-          0% {}
-          100% {transform: translateX(-50px);}
+          0% {transform: translateX(70px);}
+          100% {transform: translateX(-35px);}
+        }
+        @keyframes poopingAnimationSmall {
+          0% {transform: translateX(45px);}
+          100% {transform: translateX(-15px);}
         }
 
         }
