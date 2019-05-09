@@ -16,6 +16,11 @@ function Buttons(props){
     }
   }
 
+  // handleIncreaseHappiness() {
+  //   props.sprite.happiness += 5;
+  // }
+
+
   function handleButtonASelect() {
     const { dispatch } = props;
     const action = {
@@ -48,11 +53,8 @@ function Buttons(props){
   }
 
   function startStop() {
-    console.log('initial state', props.sprite);
     if(props.sprite.active === null) {
       handleButtonCSelect();
-      console.log('handleC activated');
-
     } else if(props.sprite.active === false){
       const { dispatch } = props;
       const action = {
@@ -62,9 +64,7 @@ function Buttons(props){
         happiness: props.sprite.happiness,
         active: true
       };
-      console.log('turned true');
       dispatch(action);
-
     } else if(props.sprite.active === true) {
       const { dispatch } = props;
       const action = {
@@ -74,7 +74,6 @@ function Buttons(props){
         happiness: props.sprite.happiness,
         active: false
       };
-      console.log('turned false');
       dispatch(action);
     }
   }

@@ -13,7 +13,6 @@ class App extends React.Component {
 
 
 
-
   // handleIncreaseActivity() {
   //   const newChicken = Object.assign({}, this.props.tamagotchi.chicken);
   //   newChicken.activity += 5;
@@ -28,17 +27,10 @@ class App extends React.Component {
   //   this.setState({chicken: newChicken});
   // }
   //
-  // handleIncreaseHappiness() {
-  //   const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
-  //   newChicken.happiness += 5;
-  //   newChicken.health += 5;
-  //   this.setState({chicken: newChicken});
-  // }
-
-
 
 
   render(){
+    console.log("this is props: ", this.props.tamagotchi)
     return(
       <div>
         <Route path='/' render={() => <Display sprite={this.props.tamagotchi} buttons={this.props.buttons} icons={this.props.icons}/>} />
@@ -60,7 +52,7 @@ App.propTypes = {
   tamagotchi: PropTypes.object,
   buttons: PropTypes.object,
   icons: PropTypes.object,
-
+  dispatch: PropTypes.func
 };
 
 //tamagotchi is the state slice that is being passed to Display seen above

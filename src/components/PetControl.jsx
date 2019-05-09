@@ -12,7 +12,7 @@ function updateTamaProperties(){
     const { dispatch } = props;
       const action = {
         type: 'UPDATE_TAMAGOTCHI',
-        activity: props.sprite.activity -= 1,
+        activity: props.sprite.activity += activity,
         hunger: props.sprite.hunger -= 4,
         happiness: props.sprite.happiness -= 2,
         active: props.sprite.active

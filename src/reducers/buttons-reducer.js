@@ -3,9 +3,10 @@ export default (state = {}, action) => {
   switch (action.type) {
   case 'SELECT_BUTTON':
     const { buttonId } = action;
-    newState = ({}, state, {
+    newState = Object.assign({}, state, {
       buttonId: buttonId
     });
+    console.log('buttonId', buttonId);
     return newState;
   default:
     return state;
