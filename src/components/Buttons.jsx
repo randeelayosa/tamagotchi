@@ -164,17 +164,6 @@ function Buttons(props){
   );
 }
 
-//
-// const mapStateToProps = state => {
-//   console.log('start', mapStateToProps);
-//   console.log('start state', state);
-//   return {
-//     tamagotchi: state.tamagotchi,
-//     buttons: state.buttons,
-//     icons: state.icons
-//   };
-// }
-// console.log('end',mapStateToProps);
 
 Buttons.propTypes = {
   dispatch: PropTypes.func,
