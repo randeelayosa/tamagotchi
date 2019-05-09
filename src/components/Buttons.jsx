@@ -17,8 +17,7 @@ function Buttons(props){
   }
 
 
-
-  function toJustRunTHeseInteractions() {
+  function toJustRunTheseInteractions() {
     handleButtonASelect();
     let action;
     const { dispatch } = props;
@@ -46,7 +45,6 @@ function Buttons(props){
     }
     dispatch(action);
   }
-
 
 
   function handleButtonASelect() {
@@ -114,7 +112,7 @@ function Buttons(props){
         <span className='button0 toolTipText'>A<br/><br/>Toggle Icons</span>
       </div>
       <div className='toolTip secondButton'>
-        <button onClick={toJustRunTHeseInteractions}></button>
+        <button onClick={toJustRunTheseInteractions}></button>
         <span className='button1 toolTipText'>B<br/><br/>Select</span>
       </div>
       <div className='toolTip'>

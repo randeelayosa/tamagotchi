@@ -9,26 +9,6 @@ class App extends React.Component {
     super(props);
   }
 
-
-
-
-
-  // handleIncreaseActivity() {
-  //   const newChicken = Object.assign({}, this.props.tamagotchi.chicken);
-  //   newChicken.activity += 5;
-  //   newChicken.health += 5;
-  //   this.setState({chicken: newChicken});
-  // }
-  //
-  // handleIncreaseHunger() {
-  //   const newChicken = Object.assign({}, this.props.tamagotchiReducer.chicken);
-  //   newChicken.hunger += 5;
-  //   newChicken.health += 5;
-  //   this.setState({chicken: newChicken});
-  // }
-  //
-
-
   render(){
     console.log('this is props: ', this.props.tamagotchi);
     return(
@@ -40,6 +20,7 @@ class App extends React.Component {
             justify-content: center;
             align-items: center;
             height: 98vh;
+            font-family: Arial, sans serif;
           }
           `}</style>
       </div>

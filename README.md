@@ -1,6 +1,6 @@
 # Tamagotchi
 
-#### _Front End Development/React Week 2 - 4.24.19_
+#### _Front-End Development/React - 4.24.19_
 
 #### By _**Randee Layosa and Maly Phongsavanh**_
 
@@ -9,18 +9,19 @@
 
 ## Description
 
-_This application uses React to create a web replica of the popular 90's Japanese toy, "Tamagotchi"._
+_This application uses React and Redux to create a web replica of the popular 90's Japanese toy, "Tamagotchi"._
 
 ## Preview
 <p align="center">Original toy | Screenshot</p>
 <p align="center">
 <img src="src/assets/images/toy.jpeg" width="350" height="270" title="image of original toy">
-<img src="src/assets/images/tama.png" width="350" height="270" title="screenshot">
+<img src="src/assets/images/tamagotchi.png" width="350" height="270" title="screenshot">
 </p>
 
 ## Technologies Used
 
   * _React_
+  * _Redux_
   * _Webpack_
   * _eslint_
   * _JSX_
@@ -28,14 +29,13 @@ _This application uses React to create a web replica of the popular 90's Japanes
 ## Setup/Installation Requirements
 
 #### To open and view this project file:
-1. Go to https://########.firebaseapp.com to view the live deployed app.
-2. Or, clone this GitHub repository https://github.com/randeelayosa/tamagotchi.git to your Desktop.
+1. Clone this GitHub repository https://github.com/randeelayosa/tamagotchi.git to your Desktop.
   * Install git onto your computer if it isn't already.
   * To clone the project down to your desktop, open your Terminal, and enter the following commands:
   ```
   cd desktop
-  git clone [paste link here]
-  cd [project folder name]
+  git clone https://github.com/randeelayosa/tamagotchi.git
+  cd tamagotchi
   atom .
   npm install
   npm run start
@@ -43,7 +43,7 @@ _This application uses React to create a web replica of the popular 90's Japanes
   * _You can use another text editor if Atom is not your preferred program._
   * _Make sure a "node_modules" and "dist" folder are created in your project file. If it hasn't, run `npm install` again._
   * _You can then go to the link in step 1 above, or continue on to the following instructions to run the server._
-3. Go to http://localhost:8080/ in the browser of your choice. _Note: The app will automatically reload if you edit any of the code in the source files._
+2. Go to http://localhost:8080/ in the browser of your choice. _Note: The app will automatically reload if you edit any of the code in the source files._
 
 
 ## Planning
@@ -66,14 +66,14 @@ _This application uses React to create a web replica of the popular 90's Japanes
 </p>
 
 **Features Built and To Be Completed**
-- [ ] Feeding function
-- [ ] Playing function
+- [x] Feeding function
+- [x] Playing function
 - [ ] Resting function
 - [x] Set time interval
 - [x] Health inventory
 - [x] Button functionality
 - [x] Tamagotchi Egg styling
-- [ ] Add animations to player icon
+- [x] Add animations to player icon
 - [ ] Program has a Firebase database established
 - [ ] Program is deployed
 

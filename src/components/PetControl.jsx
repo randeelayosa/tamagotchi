@@ -20,7 +20,7 @@ function PetControl(props){
           active: props.sprite.active
         };
         dispatch(action);
-      },8000);
+      },10000);
     }
 
   let spritePoop;
@@ -40,9 +40,6 @@ function PetControl(props){
       opacity: '1'
     };
   }
-
-
-
 
   return(
     <div className='mainDisplay'>
