@@ -16,9 +16,37 @@ function Buttons(props){
     }
   }
 
-  // handleIncreaseHappiness() {
-  //   props.sprite.happiness += 5;
-  // }
+
+
+  function toJustRunTHeseInteractions() {
+    handleButtonASelect();
+    let action;
+    const { dispatch } = props;
+    if(props.buttons.buttonId == 0) {
+      action = {
+        type: 'UPDATE_TAMAGOTCHI',
+        activity: props.sprite.activity,
+        hunger: props.sprite.hunger,
+        happiness: props.sprite.happiness += 100
+      };
+    } else if (props.buttons.buttonId == 1){
+      action = {
+        type: 'UPDATE_TAMAGOTCHI',
+        activity: props.sprite.activity,
+        hunger: props.sprite.hunger += 100,
+        happiness: props.sprite.happiness
+      };
+    } else if (props.buttons.buttonId == 2){
+      action = {
+        type: 'UPDATE_TAMAGOTCHI',
+        activity: props.sprite.activity += 100,
+        hunger: props.sprite.hunger,
+        happiness: props.sprite.happiness
+      };
+    }
+    dispatch(action);
+  }
+
 
 
   function handleButtonASelect() {
@@ -86,7 +114,7 @@ function Buttons(props){
         <span className='button0 toolTipText'>A<br/><br/>Toggle Icons</span>
       </div>
       <div className='toolTip secondButton'>
-        <button onClick={handleButtonASelect}></button>
+        <button onClick={toJustRunTHeseInteractions}></button>
         <span className='button1 toolTipText'>B<br/><br/>Select</span>
       </div>
       <div className='toolTip'>
@@ -94,70 +122,70 @@ function Buttons(props){
         <span className='button2 toolTipText'>C<br/><br/>Home<br/>Start/Stop</span>
       </div>
       <style jsx>{`
-          .buttonPosition{
-            display: flex;
-            justify-content: space-around;
-            width: 60%;
-            height: 15%;
-            margin-top: 1%;
+        .buttonPosition{
+          display: flex;
+          justify-content: space-around;
+          width: 60%;
+          height: 15%;
+          margin-top: 1%;
+        }
+        span{
+          font-size: .8em;
+        }
+        .toolTip{
+          position: relative;
+          display: inline-block;
+          padding: 5px;
+          width: 20%;
+          height: 65%;
+        }
+        .toolTipText{
+          visibility: hidden;
+          width: 100%;
+          height: 50%;
+          background-color: rgba(251,227,58,.4);
+          color: black;
+          text-align: center;
+          padding: 3% 0;
+          border-radius: 8%;
+          position: absolute;
+          z-index: 1;
+        }
+        .toolTip:hover .toolTipText{
+          visibility: visible;
+        }
+        button{
+          width: 100%;
+          height: 100%;
+          background-color: blue;
+          border: none;
+          border-radius: 50%;
+          box-shadow: 8px 8px 50px black, inset 5px 2px 5px rgb(104, 91, 255);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .secondButton{
+          display: flex;
+          align-self: flex-end;
+        }
+        button:hover{
+          cursor: pointer;
+        }
+        @media only screen and (max-width: 768px){
+          div{
+            width: 250px;
+            height: 80px;
           }
-          span{
-            font-size: .8em;
+        }
+        @media only screen and (max-width: 425px){
+          div{
+            width: 150px;
+            height: 45px;
+            margin-top: 3%;
           }
-          .toolTip{
-            position: relative;
-            display: inline-block;
-            padding: 5px;
-            width: 20%;
-            height: 65%;
-          }
-          .toolTipText{
-            visibility: hidden;
-            width: 100%;
-            height: 50%;
-            background-color: rgba(251,227,58,.4);
-            color: black;
-            text-align: center;
-            padding: 3% 0;
-            border-radius: 8%;
-            position: absolute;
-            z-index: 1;
-          }
-          .toolTip:hover .toolTipText{
-            visibility: visible;
-          }
-          button{
-            width: 100%;
-            height: 100%;
-            background-color: blue;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 8px 8px 50px black, inset 5px 2px 5px rgb(104, 91, 255);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .secondButton{
-            display: flex;
-            align-self: flex-end;
-          }
-          button:hover{
-            cursor: pointer;
-          }
-          @media only screen and (max-width: 768px){
-            div{
-              width: 250px;
-              height: 80px;
-            }
-          }
-          @media only screen and (max-width: 425px){
-            div{
-              width: 150px;
-              height: 45px;
-              margin-top: 3%;
-            }
-          }
-          `}</style>
+        }
+        `}</style>
     </div>
 
   );
@@ -166,7 +194,8 @@ function Buttons(props){
 
 Buttons.propTypes = {
   dispatch: PropTypes.func,
-  sprite: PropTypes.object
+  sprite: PropTypes.object,
+  buttons: PropTypes.object
 };
 
 export default connect()(Buttons);

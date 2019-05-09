@@ -8,26 +8,20 @@ import { connect } from 'react-redux';
 
 function PetControl(props){
 
-function updateTamaProperties(){
-    const { dispatch } = props;
-      const action = {
-        type: 'UPDATE_TAMAGOTCHI',
-        activity: props.sprite.activity += activity,
-        hunger: props.sprite.hunger -= 4,
-        happiness: props.sprite.happiness -= 2,
-        active: props.sprite.active
-      };
-      dispatch(action);
-  }
 
-
-  if(props.sprite.active === false) {
-    clearInterval(intervalVariable);
-  }
-  else if(props.sprite.active === true) {
-    setInterval(updateTamaProperties, 5000);
-  }
-
+    if(props.sprite.active == true) {
+      const { dispatch } = props;
+      setInterval(() => {
+        const action = {
+          type: 'UPDATE_TAMAGOTCHI',
+          activity: props.sprite.activity -= 1,
+          hunger: props.sprite.hunger -= 4,
+          happiness: props.sprite.happiness -= 2,
+          active: props.sprite.active
+        };
+        dispatch(action);
+      },8000);
+    }
 
   let spritePoop;
   let spriteEat;

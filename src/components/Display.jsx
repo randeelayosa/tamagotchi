@@ -17,7 +17,7 @@ function Display(props){
           <PetControl sprite={props.sprite} buttons={props.buttons} icons={props.icons}/>
         </div>
       </div>
-      <Buttons sprite={props.sprite}/>
+      <Buttons buttons={props.buttons} sprite={props.sprite}/>
       <style jsx>{`
           .egg {
             display: flex;

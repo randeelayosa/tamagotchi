@@ -30,7 +30,7 @@ class App extends React.Component {
 
 
   render(){
-    console.log("this is props: ", this.props.tamagotchi)
+    console.log('this is props: ', this.props.tamagotchi);
     return(
       <div>
         <Route path='/' render={() => <Display sprite={this.props.tamagotchi} buttons={this.props.buttons} icons={this.props.icons}/>} />
